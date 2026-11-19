@@ -1,0 +1,65 @@
+# Default configuration. Paths are relative to the repository root unless absolute.
+# Every path can be overridden with an environment variable (see avsr/config.py).
+
+paths:
+  video_root: ../Video_Data/video data          # <Name>/<NameNNN>.mp4, AVSR_VIDEO_ROOT
+  session2_audio_root: ../Code/Cousework1/data/clean_wav   # earlier microphone session, AVSR_SESSION2_ROOT
+  ambient_noise: ../Code/Cousework1/data/noise/bg.wav       # recorded room noise, AVSR_AMBIENT_NOISE
+  work_dir: data                                 # interim artefacts (gitignored)
+  results_dir: results
+
+labels: [Ahmed, Amber, Charlie, Christopher, Dominic, Emad, Emma, Hannah, Imogen, Jess,
+         Josh, Joshua, Kailong, Kira, Manwel, Mateusz, Ngozi, Riley, Sivaprasath, Zack]
+label_aliases: { Ngoz: Ngozi }                   # folder/file prefix -> canonical label
+
+split:
+  per_class: { train: 18, val: 6, test: 6 }
+  seed: 2025
+
+audio:
+  sample_rate: 16000
+  clip_seconds: 3.8            # all clips are padded/cropped to this length on the video timeline
+  pre_emphasis: 0.97
+  frame_ms: 25
+  hop_ms: 10
+  n_fft: 512
+  filterbank:
+    scale: mel                 # mel | linear
+    shape: triangular          # triangular | rectangular
+    n_filters: 40
+    f_min: 0
+    f_max: 8000
+  n_ceps: 13                   # c0..c12; c0 is replaced by log-energy when use_energy is true
+  use_energy: true
+  deltas: 2                    # 0 = static only, 1 = +delta, 2 = +delta+delta-delta
+  delta_window: 2
+  cmvn: utterance              # utterance | none
+
+noise:
+  types: [white, pink, babble, ambient]
+  eval_snrs_db: [clean, 20, 10, 5, 0, -5, -10]
+  train_snrs_db: [clean, 20, 15, 10, 5, 0, -5]
+  babble_talkers: 6
+  ambient_train_fraction: 0.6  # first 60% of the ambient recording for training, rest for evaluation
+
+visual:
+  roi_method: landmarks        # landmarks (MediaPipe face mesh) | haar (face box + fixed proportions)
+  roi_size: [32, 64]           # height, width of the grayscale mouth crop
+  roi_scale: 1.8               # crop width = roi_scale * median mouth width of the clip
+  clahe: true
+  frame_rate: 30               # uniform rate used by visual-only models (timestamps are resampled)
+  dct_coeffs: 44               # number of zig-zag ordered 2D-DCT coefficients per frame
+  dct_drop_dc: false
+  pca_components: 44
+  deltas: 1
+  cmvn: utterance
+
+training:
+  epochs: 80
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.0001
+  patience: 20
+  label_smoothing: 0.05
+  seeds: [0, 1, 2, 3, 4]
+  device: auto                 # auto | cpu | cuda

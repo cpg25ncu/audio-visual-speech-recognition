@@ -1,0 +1,61 @@
+experiment,system,probe,seed,accuracy
+confound,landmarks / dct,rest -> rest,0,0.825
+confound,landmarks / dct,word -> word,0,1.0
+confound,landmarks / dct,word -> rest,0,0.06666666666666667
+confound,landmarks / dct,full clip,0,1.0
+confound,landmarks / dct,"full clip, word masked",0,0.08333333333333333
+confound,landmarks / dct,rest -> rest,1,0.8333333333333334
+confound,landmarks / dct,word -> word,1,1.0
+confound,landmarks / dct,word -> rest,1,0.041666666666666664
+confound,landmarks / dct,full clip,1,1.0
+confound,landmarks / dct,"full clip, word masked",1,0.075
+confound,landmarks / dct,rest -> rest,2,0.8166666666666667
+confound,landmarks / dct,word -> word,2,1.0
+confound,landmarks / dct,word -> rest,2,0.075
+confound,landmarks / dct,full clip,2,1.0
+confound,landmarks / dct,"full clip, word masked",2,0.06666666666666667
+confound,landmarks / shape,rest -> rest,0,0.35833333333333334
+confound,landmarks / shape,word -> word,0,1.0
+confound,landmarks / shape,word -> rest,0,0.016666666666666666
+confound,landmarks / shape,full clip,0,1.0
+confound,landmarks / shape,"full clip, word masked",0,0.11666666666666667
+confound,landmarks / shape,rest -> rest,1,0.4166666666666667
+confound,landmarks / shape,word -> word,1,1.0
+confound,landmarks / shape,word -> rest,1,0.016666666666666666
+confound,landmarks / shape,full clip,1,1.0
+confound,landmarks / shape,"full clip, word masked",1,0.15
+confound,landmarks / shape,rest -> rest,2,0.425
+confound,landmarks / shape,word -> word,2,1.0
+confound,landmarks / shape,word -> rest,2,0.025
+confound,landmarks / shape,full clip,2,1.0
+confound,landmarks / shape,"full clip, word masked",2,0.125
+confound,landmarks / dct+shape,rest -> rest,0,0.7833333333333333
+confound,landmarks / dct+shape,word -> word,0,1.0
+confound,landmarks / dct+shape,word -> rest,0,0.03333333333333333
+confound,landmarks / dct+shape,full clip,0,1.0
+confound,landmarks / dct+shape,"full clip, word masked",0,0.10833333333333334
+confound,landmarks / dct+shape,rest -> rest,1,0.8
+confound,landmarks / dct+shape,word -> word,1,1.0
+confound,landmarks / dct+shape,word -> rest,1,0.016666666666666666
+confound,landmarks / dct+shape,full clip,1,1.0
+confound,landmarks / dct+shape,"full clip, word masked",1,0.11666666666666667
+confound,landmarks / dct+shape,rest -> rest,2,0.8083333333333333
+confound,landmarks / dct+shape,word -> word,2,1.0
+confound,landmarks / dct+shape,word -> rest,2,0.075
+confound,landmarks / dct+shape,full clip,2,1.0
+confound,landmarks / dct+shape,"full clip, word masked",2,0.041666666666666664
+confound,haar / dct,rest -> rest,0,0.7916666666666666
+confound,haar / dct,word -> word,0,1.0
+confound,haar / dct,word -> rest,0,0.1
+confound,haar / dct,full clip,0,1.0
+confound,haar / dct,"full clip, word masked",0,0.1
+confound,haar / dct,rest -> rest,1,0.6833333333333333
+confound,haar / dct,word -> word,1,0.9916666666666667
+confound,haar / dct,word -> rest,1,0.13333333333333333
+confound,haar / dct,full clip,1,1.0
+confound,haar / dct,"full clip, word masked",1,0.05
+confound,haar / dct,rest -> rest,2,0.7083333333333334
+confound,haar / dct,word -> word,2,1.0
+confound,haar / dct,word -> rest,2,0.06666666666666667
+confound,haar / dct,full clip,2,0.9916666666666667
+confound,haar / dct,"full clip, word masked",2,0.03333333333333333

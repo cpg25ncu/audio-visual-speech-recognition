@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Data and generated artefacts (the dataset is not distributed)
+/data/
+*.wav
+*.mp4
+*.npz
+*.npy
+*.pt
+*.ckpt
+
+# Keep curated assets
+!assets/**
