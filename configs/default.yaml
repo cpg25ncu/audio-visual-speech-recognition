@@ -55,6 +55,7 @@ visual:
   cmvn: utterance
 
 training:
+  backend: torch               # torch | keras (same models and protocol, see avsr/backends.py)
   epochs: 80
   batch_size: 32
   lr: 0.001

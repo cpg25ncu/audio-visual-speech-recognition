@@ -21,11 +21,11 @@ import pandas as pd
 
 from .audio.features import cmvn, deltas
 from .audio.vad import speech_endpoints
+from .backends import get_backend
 from .config import Config, results_path, work_path
 from .corpus import CLEAN, Corpus, cond_key, eval_conditions, stable_seed
 from .fusion import entropy_weights, fuse_log_linear, select_adaptive_params, select_alpha
-from .models import build_model, count_parameters
-from .training import TrainConfig, accuracy, fit, predict_proba
+from .training import TrainConfig, accuracy
 from .visual.degrade import LEVELS
 from .visual.features import resample
 
@@ -42,8 +42,12 @@ def avkey(split: str, kind: str, snr, level: int) -> str:
 
 
 class Runner:
-    def __init__(self, cfg: Config, seeds: list[int] | None = None, epochs: int | None = None):
+    def __init__(self, cfg: Config, seeds: list[int] | None = None, epochs: int | None = None,
+                 backend: str | None = None):
         self.cfg = cfg
+        self.backend = get_backend(backend or cfg["training"].get("backend", "torch"))
+        # results of a non-default backend never overwrite the PyTorch ones
+        self.prefix = "" if self.backend.name == "torch" else f"{self.backend.name}-"
         self.corpus = Corpus(cfg)
         self.seeds = list(seeds if seeds is not None else cfg["training"]["seeds"])
         overrides = {"epochs": epochs} if epochs else {}
@@ -56,34 +60,38 @@ class Runner:
     # ------------------------------------------------------------------ helpers
     def train(self, kind: str, Xtr, ytr, Xva, yva, seed: int, bank: bool = False, **model_kw):
         in_dim = Xtr.shape[-2] if kind != "roicnn" else 0
-        model = build_model(kind, in_dim, self.n_classes, **model_kw)
+        model = self.backend.build(kind, in_dim, self.n_classes, **model_kw)
         tc = replace(self.tcfg, extra={"bank": bank})
         t0 = time.time()
-        model, hist = fit(model, Xtr, ytr, Xva, yva, tc, seed)
-        hist.update(seconds=round(time.time() - t0, 1), parameters=count_parameters(model))
+        model, hist = self.backend.fit(model, Xtr, ytr, Xva, yva, tc, seed, self.n_classes)
+        hist.update(seconds=round(time.time() - t0, 1), parameters=self.backend.n_params(model),
+                    backend=self.backend.name)
         return model, hist
 
-    def save_probs(self, tag: str, seed: int, probs: dict[str, np.ndarray]) -> None:
-        np.savez_compressed(self.probs_dir / f"{tag}__seed{seed}.npz", **probs)
+    def predict(self, model, X: np.ndarray) -> np.ndarray:
+        return self.backend.predict_proba(model, X)
 
-    def load_probs(self, tag: str, seed: int) -> dict[str, np.ndarray]:
-        with np.load(self.probs_dir / f"{tag}__seed{seed}.npz") as z:
+    def save_probs(self, tag: str, seed: int, probs: dict[str, np.ndarray]) -> None:
+        np.savez_compressed(self.probs_dir / f"{self.prefix}{tag}__seed{seed}.npz", **probs)
+
+    def load_probs(self, tag: str, seed: int, prefix: str | None = None) -> dict[str, np.ndarray]:
+        prefix = self.prefix if prefix is None else prefix
+        with np.load(self.probs_dir / f"{prefix}{tag}__seed{seed}.npz") as z:
             return {k: z[k] for k in z.files}
 
     def save_history(self, tag: str, seed: int, hist: dict) -> None:
-        (self.probs_dir / f"{tag}__seed{seed}.history.json").write_text(json.dumps(hist))
+        (self.probs_dir / f"{self.prefix}{tag}__seed{seed}.history.json").write_text(json.dumps(hist))
 
     def save_model(self, tag: str, seed: int, model, meta: dict) -> None:
         """Keep the first seed's weights of the systems used by the inference CLI."""
         if seed != self.seeds[0]:
             return
-        import torch
-        torch.save({"state_dict": model.state_dict(), "meta": meta}, self.models_dir / f"{tag}.pt")
+        self.backend.save(model, self.models_dir / f"{self.prefix}{tag}", meta)
 
-    @staticmethod
-    def write(rows: list[dict], name: str) -> pd.DataFrame:
+    def write(self, rows: list[dict], name: str) -> pd.DataFrame:
         df = pd.DataFrame(rows)
-        df.to_csv(results_path_for(name), index=False)
+        suffix = "" if self.backend.name == "torch" else f"_{self.backend.name}"
+        df.to_csv(results_path_for(name + suffix), index=False)
         return df
 
     def y(self, split: str) -> np.ndarray:
@@ -138,9 +146,9 @@ class Runner:
         for tag, arch, X, is_bank, Xv, yv, ev in setups:
             for seed in self.seeds:
                 model, hist = self.train(arch, X, ytr, Xv, yv, seed, bank=is_bank)
-                probs = {k: predict_proba(model, x) for k, x in ev.items()}
+                probs = {k: self.predict(model, x) for k, x in ev.items()}
                 if len(s2y) and not tag.endswith("-ss"):
-                    p2 = predict_proba(model, s2X)
+                    p2 = self.predict(model, s2X)
                     rows.append({"experiment": "audio", "system": tag, "noise": "session2", "snr": "clean",
                                  "seed": seed, "accuracy": accuracy(p2, s2y)})
                 rows += self._rows_from_probs(probs, "audio", tag, seed,
@@ -182,11 +190,11 @@ class Runner:
             s2X, s2y = c.session2_audio(mf)
             for seed in self.seeds[:n_seeds]:
                 model, _ = self.train("tcn", Xtr, self.y("train"), evals[cond_key("val", *CLEAN)], self.y("val"), seed)
-                probs = {k: predict_proba(model, x) for k, x in evals.items()}
+                probs = {k: self.predict(model, x) for k, x in evals.items()}
                 rows += self._rows_from_probs(probs, "audio_frontend", name, seed, {"dim": mf.dim})
                 if len(s2y):
                     rows.append({"experiment": "audio_frontend", "system": name, "noise": "session2", "snr": "clean",
-                                 "seed": seed, "accuracy": accuracy(predict_proba(model, s2X), s2y), "dim": mf.dim})
+                                 "seed": seed, "accuracy": accuracy(self.predict(model, s2X), s2y), "dim": mf.dim})
             print(f"frontend '{name}' done")
         return self.write(rows, "audio_frontend")
 
@@ -232,7 +240,7 @@ class Runner:
                   for s in ("val", "test") for L in VIS_LEVELS}
             for seed in self.seeds:
                 model, hist = self.train(arch, Xtr, self.y("train"), ev[vkey("val", 0)], self.y("val"), seed)
-                probs = {k: predict_proba(model, x) for k, x in ev.items()}
+                probs = {k: self.predict(model, x) for k, x in ev.items()}
                 for L in VIS_LEVELS:
                     rows.append({"experiment": "visual", "system": tag, "seed": seed, "vis_level": L,
                                  "accuracy": accuracy(probs[vkey("test", L)], self.y("test")),
@@ -256,8 +264,8 @@ class Runner:
                 model, _ = self.train("tcn", Xtr, self.y("train"), ev[vkey("val", 0)], self.y("val"), seed)
                 for L in (0, level):
                     rows.append({"experiment": "dct_sweep", "system": f"k={k}", "k": k, "seed": seed, "vis_level": L,
-                                 "val_accuracy": accuracy(predict_proba(model, ev[vkey("val", L)]), self.y("val")),
-                                 "accuracy": accuracy(predict_proba(model, ev[vkey("test", L)]), self.y("test"))})
+                                 "val_accuracy": accuracy(self.predict(model, ev[vkey("val", L)]), self.y("val")),
+                                 "accuracy": accuracy(self.predict(model, ev[vkey("test", L)]), self.y("test"))})
             print(f"dct k={k} done")
         return self.write(rows, "dct_sweep")
 
@@ -306,11 +314,11 @@ class Runner:
                 m_s, _ = self.train("tcn", speech["train"], self.y("train"), speech["val"], self.y("val"), seed)
                 m_r, _ = self.train("tcn", rest["train"], self.y("train"), rest["val"], self.y("val"), seed)
                 m_f, _ = self.train("tcn", full["train"], self.y("train"), full["val"], self.y("val"), seed)
-                res = {"rest -> rest": accuracy(predict_proba(m_r, rest["test"]), yt),
-                       "word -> word": accuracy(predict_proba(m_s, speech["test"]), yt),
-                       "word -> rest": accuracy(predict_proba(m_s, rest["test"]), yt),
-                       "full clip": accuracy(predict_proba(m_f, full["test"]), yt),
-                       "full clip, word masked": accuracy(predict_proba(m_f, masked), yt)}
+                res = {"rest -> rest": accuracy(self.predict(m_r, rest["test"]), yt),
+                       "word -> word": accuracy(self.predict(m_s, speech["test"]), yt),
+                       "word -> rest": accuracy(self.predict(m_s, rest["test"]), yt),
+                       "full clip": accuracy(self.predict(m_f, full["test"]), yt),
+                       "full clip, word masked": accuracy(self.predict(m_f, masked), yt)}
                 rows += [{"experiment": "confound", "system": f"{method} / {kind}", "probe": k, "seed": seed,
                           "accuracy": v} for k, v in res.items()]
             print(f"confound {method}/{kind} done")
@@ -348,7 +356,7 @@ class Runner:
         vval = np.stack([V30[("val", L)][j] for j, L in enumerate(vval_levels)])
         for seed in self.seeds:
             model, hist = self.train("tcn", vbank, ytr, vval, yva, seed, bank=True)
-            probs = {vkey(s, L): predict_proba(model, V30[(s, L)]) for s in ("val", "test") for L in VIS_LEVELS}
+            probs = {vkey(s, L): self.predict(model, V30[(s, L)]) for s in ("val", "test") for L in VIS_LEVELS}
             self.save_probs("visual-multi", seed, probs)
             self.save_history("visual-multi", seed, hist)
             self.save_model("visual-multi", seed, model, {"arch": "tcn", "in_dim": int(vbank.shape[2]),
@@ -377,7 +385,7 @@ class Runner:
                     for k, snr in self.conds:
                         xa = audio_eval[cond_key(s, k, snr)]
                         for L in VIS_LEVELS:
-                            probs[avkey(s, k, snr, L)] = predict_proba(model, np.concatenate([xa, V100[(s, L)]], 1))
+                            probs[avkey(s, k, snr, L)] = self.predict(model, np.concatenate([xa, V100[(s, L)]], 1))
                 self.save_probs(tag, seed, probs)
                 self.save_history(tag, seed, hist)
                 self.save_model(tag, seed, model, {"arch": "tcn", "in_dim": int(bank.shape[2]),
@@ -437,6 +445,99 @@ class Runner:
         pd.DataFrame(alpha_rows).to_csv(results_path_for("fusion_alpha"), index=False)
         return self.write(rows, "fusion")
 
+    # ------------------------------------------------------------------ E6 framework parity
+    def framework_parity(self) -> pd.DataFrame:
+        """Re-train the main systems with a second framework and compare with the PyTorch results.
+
+        Run with ``--backend keras``. Inputs, splits, seeds, augmentation, schedule and model
+        selection are identical; only the deep-learning framework differs, so agreement within the
+        seed-to-seed spread shows that both implementations are correct. PyTorch numbers are read
+        from the posteriors stored by the main experiments (the same test inputs).
+        """
+        if self.backend.name == "torch":
+            raise ValueError("framework_parity compares a second backend with PyTorch: use --backend keras")
+        c = self.corpus
+        ytr, yva = self.y("train"), self.y("val")
+        mf = c.mfcc_config()
+        conds = [CLEAN] + [(k, s) for k in self.cfg["noise"]["types"] for s in (10, 0, -10)]
+        evals = self._audio_eval_sets(mf, conds=conds)
+        Xtr = c.audio_features([c.waves[i] for i in c.ids_of("train")], mf)
+        abank = c.audio_bank("train", mf, AUDIO_BANK_VERSIONS, seed=7)
+        Xva_mc, yva_mc = self._multicondition_val(mf)
+        vis_file = results_path(self.cfg, "tables", "fusion_visual_stream.txt")
+        vis_tag = vis_file.read_text().strip()
+        _, method, kind, _, _ = next(v for v in self.VISUAL_VARIANTS if v[0] == vis_tag)
+        levels = (0, 2)
+        t_audio = c.audio_frame_times(mf)
+        V30 = {(s, L): self.visual_inputs(method, kind, 1, c.ids_of(s), level=L)
+               for s in ("train", "val", "test") for L in levels}
+        V100 = {(s, L): self.visual_inputs(method, kind, 1, c.ids_of(s), target_times=t_audio, level=L)
+                for s in ("train", "val", "test") for L in levels}
+        ebank = np.concatenate([abank, np.repeat(V100[("train", 0)][:, None], abank.shape[1], axis=1)], axis=2)
+        eval_early = {avkey(s, k, snr, L): np.concatenate([evals[cond_key(s, k, snr)], V100[(s, L)]], 1)
+                      for s in ("val", "test") for k, snr in conds for L in levels}
+        setups = [
+            ("audio-tcn-clean", "tcn", Xtr, False, evals[cond_key("val", *CLEAN)], yva, evals),
+            ("audio-cnn2d-clean", "cnn2d", Xtr, False, evals[cond_key("val", *CLEAN)], yva, evals),
+            ("audio-tcn-multi", "tcn", abank, True, Xva_mc, yva_mc, evals),
+            (_slug(vis_tag), "tcn", V30[("train", 0)], False, V30[("val", 0)], yva,
+             {vkey(s, L): V30[(s, L)] for s in ("val", "test") for L in levels}),
+            ("av-early-multi-cleanvideo", "tcn", ebank, True,
+             np.concatenate([Xva_mc, np.concatenate([V100[("val", 0)]] * 2)], 1), yva_mc, eval_early),
+        ]
+        rows, meta = [], []
+        for tag, arch, X, is_bank, Xv, yv, ev in setups:
+            for seed in self.seeds:
+                model, hist = self.train(arch, X, ytr, Xv, yv, seed, bank=is_bank)
+                probs = {k: self.predict(model, x) for k, x in ev.items()}
+                self.save_probs(tag, seed, probs)
+                self.save_history(tag, seed, hist)
+                self.save_model(tag, seed, model, {"arch": arch, "in_dim": int(X.shape[-2])})
+                ref = self.load_probs(tag, seed, prefix="")
+                for key, p in probs.items():
+                    if not key.startswith("test|"):
+                        continue
+                    for fw, pp in ((self.backend.name, p), ("torch", ref[key])):
+                        rows += [{**r, "framework": fw} for r in
+                                 self._rows_from_probs({key: pp}, "framework_parity", tag, seed)]
+                ref_hist = json.loads((self.probs_dir / f"{tag}__seed{seed}.history.json").read_text())
+                meta += [{"system": tag, "seed": seed, "framework": self.backend.name, "device": "cpu",
+                          "parameters": hist["parameters"], "seconds": hist["seconds"], "best_epoch": hist["best_epoch"]},
+                         {"system": tag, "seed": seed, "framework": "torch", "device": "cuda",
+                          "parameters": ref_hist["parameters"], "seconds": ref_hist["seconds"],
+                          "best_epoch": ref_hist["best_epoch"]}]
+                print(f"[{self.backend.name}] {tag} seed {seed}: clean "
+                      f"{accuracy(next(v for k, v in probs.items() if k.startswith('test|')), self.y('test')):.3f} "
+                      f"({hist['seconds']}s, {hist['parameters']} params)")
+
+        # interoperability: Keras audio posteriors + PyTorch video posteriors, adaptive late fusion
+        for seed in self.seeds:
+            pa = self.load_probs("audio-tcn-multi", seed)
+            pv = self.load_probs(_slug(vis_tag), seed, prefix="")
+            pairs = [(pa[cond_key("val", k, s)], pv[vkey("val", 0)]) for k, s in conds]
+            ab = select_adaptive_params(pairs, [yva] * len(pairs))
+            fused = {avkey("test", k, s, L): fuse_log_linear(pa[cond_key("test", k, s)], pv[vkey("test", L)],
+                                                             entropy_weights(pa[cond_key("test", k, s)],
+                                                                             pv[vkey("test", L)], *ab))
+                     for k, s in conds for L in levels}
+            rows += [{**r, "framework": f"{self.backend.name} audio + torch video"} for r in
+                     self._rows_from_probs(fused, "framework_parity", "late-adaptive", seed)]
+            ref = self.load_probs("late-adaptive", seed, prefix="")
+            rows += [{**r, "framework": "torch"} for r in
+                     self._rows_from_probs({k: ref[k] for k in fused}, "framework_parity", "late-adaptive", seed)]
+        pd.DataFrame(meta).to_csv(results_path_for("framework_parity_meta"), index=False)
+        df = pd.DataFrame(rows)
+        df.to_csv(results_path_for("framework_parity"), index=False)
+        return df
+
+    def deployment(self) -> pd.DataFrame:
+        """Export the multi-condition audio model to TFLite (Keras) and ONNX (PyTorch) and measure
+        accuracy, size and single-clip CPU latency of every format."""
+        from .export import benchmark_exports
+        df = benchmark_exports(self)
+        df.to_csv(results_path_for("deployment"), index=False)
+        return df
+
 
 _RESULTS_DIR: list[Path] = []
 
@@ -452,15 +553,18 @@ def _slug(tag: str) -> str:
     return "visual-" + s
 
 
-EXPERIMENTS = ["audio", "audio_frontend", "visual", "dct_sweep", "confound", "fusion", "fusion_late"]
+EXPERIMENTS = ["audio", "audio_frontend", "visual", "dct_sweep", "confound", "fusion", "fusion_late",
+               "framework_parity", "deployment"]
 
 
-def run(cfg: Config, experiments: list[str], seeds=None, epochs=None) -> None:
+def run(cfg: Config, experiments: list[str], seeds=None, epochs=None, backend: str | None = None) -> None:
     _RESULTS_DIR[:] = [results_path(cfg, "tables", "_").parent]
-    r = Runner(cfg, seeds, epochs)
+    r = Runner(cfg, seeds, epochs, backend)
     for name in EXPERIMENTS:
         if name == "fusion_late" and ("all" in experiments or "fusion" in experiments):
             continue                      # already called at the end of `fusion`
+        if name in ("framework_parity", "deployment") and name not in experiments:
+            continue                      # need the Keras backend / both frameworks: run explicitly
         if name in experiments or "all" in experiments:
             t0 = time.time()
             getattr(r, name)()

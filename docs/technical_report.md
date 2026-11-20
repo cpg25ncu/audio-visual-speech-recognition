@@ -15,6 +15,8 @@ generated from the experiment logs by `avsr report`.
   recogniser is confidently wrong.
 * The data contain a recording-session confound. It is quantified in section 7.4, and the deployed lip reader is
   shown not to rely on it.
+* The models were implemented in both PyTorch and Keras/TensorFlow. On identical inputs the two frameworks agree
+  within the seed spread (section 7.6), and the models were exported to ONNX and TFLite (section 7.7).
 
 ## 1. Problem
 
@@ -259,6 +261,59 @@ behaviour any stream-weighting scheme should reproduce.
 **Scenario B: degradation seen in training.** A visual model trained with video-quality augmentation reaches
 97.3% even at the severe level, and every fusion system stays above 94%. In this single-speaker setting,
 matching the training conditions to deployment matters more than the fusion method.
+
+### 7.6 One protocol, two frameworks
+The deep-learning part is implemented twice, in PyTorch (`models.py`, `training.py`) and in Keras 3 with the
+TensorFlow backend (`keras_models.py`, `keras_training.py`), behind one interface (`backends.py`). Everything
+else consumes NumPy arrays and posteriors, so it is shared.
+
+**Making the two implementations comparable.** Matching layer types is not enough; the defaults differ in
+ways that change training dynamics. Each difference was handled explicitly:
+
+| Aspect | PyTorch | Keras | Resolution |
+|---|---|---|---|
+| layout | `(batch, channels, time)` | `(batch, time, channels)` | transpose at the backend boundary |
+| batch-norm momentum | weight of the *new* statistic (0.1) | weight of the *old* statistic (0.99) | Keras momentum 0.9, epsilon 1e-5 |
+| initialisation | U(±1/√fan_in) for weights and biases | Glorot-uniform weights, zero biases | custom initialisers reproducing PyTorch's |
+| gradient clipping | `clip_grad_norm_` (global norm) | `clipnorm` (per tensor) | `global_clipnorm=5` |
+| AdamW epsilon | 1e-8 | 1e-7 | 1e-8 |
+| one-cycle schedule | `OneCycleLR` | none built in | `LearningRateSchedule` subclass, unit-tested against `OneCycleLR` |
+| augmentation | function applied to the batch | – | custom layer active only when `training=True` |
+| early stopping on accuracy, ties by log-loss | hand-written loop | – | callback restoring the best weights |
+| multi-condition sampling | tensor indexing | – | `keras.utils.PyDataset` redrawing versions each epoch |
+
+An earlier Keras run with framework defaults matched PyTorch on clean data but transferred worse to degraded
+video (68% vs 92% on one seed). Aligning initialisation, clipping and epsilon removed the gap. Out-of-distribution
+generalisation is more sensitive to implementation details than in-distribution accuracy.
+
+**Result.** Five systems × five seeds were trained in Keras on exactly the inputs the PyTorch models saw:
+* Over 30 system/condition pairs the mean accuracies differ by at most 1.6 points, every difference inside the
+  seed-to-seed spread.
+* Trainable-parameter counts are identical.
+* Keras audio posteriors fused with PyTorch video posteriors reproduce the all-PyTorch late-fusion results
+  (|Δ| ≤ 0.7).
+* Training time is not comparable: PyTorch ran on a laptop GPU, while TensorFlow ≥ 2.11 has no GPU support on
+  native Windows (10–14× slower on CPU).
+
+### 7.7 Deployment
+The multi-condition audio recogniser was exported from both frameworks (`export.py`):
+
+| Format | Size | Clean | 0 dB | Max logit difference to source | Latency (1 clip, CPU) |
+|---|---:|---:|---:|---:|---:|
+| PyTorch eager | 1.2 MB | 100.0 | 76.9 | – | 2.29 ms |
+| ONNX Runtime | 1.2 MB | 100.0 | 76.9 | 2e-6 | 0.54 ms |
+| Keras, `tf.function` | 3.7 MB (incl. optimiser state) | 100.0 | 79.0 | – | 1.63 ms |
+| TFLite float32 | 1.2 MB | 100.0 | 79.0 | 4e-6 | 1.40 ms |
+| TFLite float16 | 628 KB | 100.0 | 79.0 | 0.002 | 1.39 ms |
+| TFLite int8 (dynamic range) | 331 KB | 100.0 | 79.0 | 0.06 | 0.39 ms |
+| TFLite int8 (full integer, 100-clip calibration) | 341 KB | 100.0 | 79.0 | 1.1 | 0.40 ms |
+
+* **ONNX** reproduces PyTorch to 2e-6 and runs 4× faster than eager PyTorch for single clips.
+* **Full-integer TFLite** changes logits by up to 1.1 but no decision: the model is small, its classes are well
+  separated, and its activations have a narrow range.
+* **Conversion route.** Full-integer calibration requires the weights to be frozen into constants. Converting
+  from a traced concrete function keeps them as resource variables, so calibration fails; the model is therefore
+  exported as a SavedModel with a fixed `(1, T, D)` signature before conversion.
 
 ## 8. Limitations
 * **One speaker, one video session, 600 clips.** The results describe speaker-dependent recognition of a

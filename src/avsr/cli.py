@@ -19,9 +19,12 @@ def main(argv=None) -> None:
 
     r = sub.add_parser("run", help="run experiments")
     r.add_argument("experiments", nargs="+",
-                   choices=["all", "audio", "audio_frontend", "visual", "dct_sweep", "confound", "fusion", "fusion_late"])
+                   choices=["all", "audio", "audio_frontend", "visual", "dct_sweep", "confound", "fusion", "fusion_late",
+                            "framework_parity", "deployment"])
     r.add_argument("--seeds", nargs="+", type=int, default=None)
     r.add_argument("--epochs", type=int, default=None)
+    r.add_argument("--backend", choices=["torch", "keras"], default=None,
+                   help="deep-learning framework (default: training.backend in the config, i.e. torch)")
 
     sub.add_parser("report", help="figures and RESULTS.md from the result tables")
 
@@ -40,7 +43,7 @@ def main(argv=None) -> None:
         prepare_all(cfg, methods=args.methods, force=args.force)
     elif args.cmd == "run":
         from .experiments import run
-        run(cfg, args.experiments, seeds=args.seeds, epochs=args.epochs)
+        run(cfg, args.experiments, seeds=args.seeds, epochs=args.epochs, backend=args.backend)
     elif args.cmd == "report":
         from .report import build_report
         build_report(cfg)

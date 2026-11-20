@@ -196,3 +196,64 @@ The visual recogniser and early fusion are trained with video-quality augmentati
 | AV late fusion, global α (matched) | 99.8 ± 0.4 | 99.8 ± 0.5 | 98.0 ± 0.8 | 97.5 ± 1.3 |
 | AV late fusion, oracle α (matched) | 99.9 ± 0.1 | 99.5 ± 0.3 | 99.5 ± 0.1 | 98.4 ± 0.5 |
 | AV late fusion, adaptive α (matched) | 99.8 ± 0.4 | 99.7 ± 0.7 | 99.1 ± 0.3 | 97.3 ± 1.4 |
+
+## PyTorch vs. Keras
+
+Every system below was trained twice from identical features, splits, seeds, augmentation, learning-rate schedule and model-selection rule: once with PyTorch and once with Keras 3 (TensorFlow backend). The last block fuses Keras audio posteriors with PyTorch video posteriors.
+
+| System | Condition | PyTorch | Keras | Δ (Keras − PyTorch) |
+|---|---|---:|---:|---:|
+| Audio, clean training | clean audio | 100.0 ± 0.0 | 100.0 ± 0.0 | +0.0 |
+| Audio, clean training | 10 dB | 61.0 ± 8.8 | 60.3 ± 7.2 | -0.6 |
+| Audio, clean training | 0 dB | 30.5 ± 5.9 | 30.5 ± 6.8 | +0.0 |
+| Audio, clean training | -10 dB | 9.3 ± 1.6 | 10.2 ± 1.5 | +0.9 |
+| Audio 2-D CNN, clean | clean audio | 99.5 ± 0.5 | 99.7 ± 0.7 | +0.2 |
+| Audio 2-D CNN, clean | 10 dB | 7.8 ± 2.1 | 9.4 ± 1.1 | +1.6 |
+| Audio 2-D CNN, clean | 0 dB | 6.0 ± 0.9 | 6.9 ± 1.0 | +0.9 |
+| Audio 2-D CNN, clean | -10 dB | 5.8 ± 0.6 | 5.7 ± 0.5 | -0.2 |
+| Audio, multi-condition | clean audio | 100.0 ± 0.0 | 100.0 ± 0.0 | +0.0 |
+| Audio, multi-condition | 10 dB | 91.6 ± 1.3 | 91.0 ± 1.0 | -0.6 |
+| Audio, multi-condition | 0 dB | 77.7 ± 0.6 | 77.8 ± 1.0 | +0.0 |
+| Audio, multi-condition | -10 dB | 46.9 ± 2.1 | 46.5 ± 1.4 | -0.4 |
+| Visual (DCT+shape) | clean video | 99.8 ± 0.4 | 100.0 ± 0.0 | +0.2 |
+| Visual (DCT+shape) | moderate video | 85.8 ± 4.5 | 85.2 ± 4.8 | -0.7 |
+| AV early fusion | clean video, clean audio | 100.0 ± 0.0 | 100.0 ± 0.0 | +0.0 |
+| AV early fusion | clean video, 10 dB | 100.0 ± 0.0 | 100.0 ± 0.0 | +0.0 |
+| AV early fusion | clean video, 0 dB | 100.0 ± 0.1 | 100.0 ± 0.0 | +0.0 |
+| AV early fusion | clean video, -10 dB | 100.0 ± 0.0 | 100.0 ± 0.0 | +0.0 |
+| AV early fusion | moderate video, clean audio | 93.8 ± 3.5 | 93.7 ± 0.7 | -0.2 |
+| AV early fusion | moderate video, 10 dB | 89.7 ± 4.6 | 89.4 ± 4.4 | -0.3 |
+| AV early fusion | moderate video, 0 dB | 84.5 ± 5.3 | 84.0 ± 5.5 | -0.5 |
+| AV early fusion | moderate video, -10 dB | 76.6 ± 6.2 | 76.8 ± 7.6 | +0.1 |
+| AV late fusion, adaptive α | clean video, clean audio | 100.0 ± 0.0 | 100.0 ± 0.0 | +0.0 |
+| AV late fusion, adaptive α | clean video, 10 dB | 100.0 ± 0.1 | 100.0 ± 0.1 | +0.0 |
+| AV late fusion, adaptive α | clean video, 0 dB | 100.0 ± 0.1 | 100.0 ± 0.1 | +0.0 |
+| AV late fusion, adaptive α | clean video, -10 dB | 99.8 ± 0.4 | 99.8 ± 0.4 | +0.0 |
+| AV late fusion, adaptive α | moderate video, clean audio | 100.0 ± 0.0 | 100.0 ± 0.0 | +0.0 |
+| AV late fusion, adaptive α | moderate video, 10 dB | 93.6 ± 0.9 | 93.6 ± 0.8 | +0.0 |
+| AV late fusion, adaptive α | moderate video, 0 dB | 83.7 ± 0.9 | 84.4 ± 1.1 | +0.7 |
+| AV late fusion, adaptive α | moderate video, -10 dB | 74.0 ± 3.0 | 73.4 ± 4.0 | -0.5 |
+
+Trainable parameters and mean training time per model:
+
+| System | PyTorch params | Keras params | PyTorch time | Keras time |
+|---|---:|---:|---:|---:|
+| Audio, clean training | 312,930 | 312,930 | 4.7 s (cuda) | 46.2 s (cpu) |
+| Audio 2-D CNN, clean | 112,212 | 112,212 | 10.8 s (cuda) | 123.7 s (cpu) |
+| Audio, multi-condition | 312,930 | 312,930 | 6.3 s (cuda) | 88.7 s (cpu) |
+| Visual (DCT+shape) | 361,440 | 361,440 | 2.4 s (cuda) | 27.0 s (cpu) |
+| AV early fusion | 391,470 | 391,470 | 4.6 s (cuda) | 60.0 s (cpu) |
+
+## Deployment formats (multi-condition audio model)
+
+Single-clip CPU latency (batch 1, median of 30 runs); accuracy on the 120-clip clean test set and on the same clips at 0 dB (mean of four noise types); largest logit difference to the source framework. The `.keras` file also stores the optimiser state, hence its size.
+
+| Framework | Format | Size (KB) | Clean | 0 dB | Max logit diff | Latency (ms) |
+|---|---|---:|---:|---:|---:|---:|
+| PyTorch | eager (CPU) | 1,240 | 100.0 | 76.9 | – | 2.29 |
+| PyTorch | ONNX Runtime | 1,222 | 100.0 | 76.9 | 2.1e-06 | 0.54 |
+| Keras | Keras, tf.function (CPU) | 3,795 | 100.0 | 79.0 | – | 1.63 |
+| Keras | TFLite float32 | 1,233 | 100.0 | 79.0 | 4.1e-06 | 1.40 |
+| Keras | TFLite float16 | 628 | 100.0 | 79.0 | 0.0024 | 1.39 |
+| Keras | TFLite int8 (dynamic range) | 331 | 100.0 | 79.0 | 0.062 | 0.39 |
+| Keras | TFLite int8 (full integer) | 341 | 100.0 | 79.0 | 1.1 | 0.40 |

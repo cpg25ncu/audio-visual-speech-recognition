@@ -1,0 +1,931 @@
+experiment,system,seed,accuracy,noise,snr,framework,vis_level
+framework_parity,audio-tcn-clean,0,1.0,clean,clean,keras,
+framework_parity,audio-tcn-clean,0,1.0,clean,clean,torch,
+framework_parity,audio-tcn-clean,0,0.7,white,10,keras,
+framework_parity,audio-tcn-clean,0,0.725,white,10,torch,
+framework_parity,audio-tcn-clean,0,0.325,white,0,keras,
+framework_parity,audio-tcn-clean,0,0.38333333333333336,white,0,torch,
+framework_parity,audio-tcn-clean,0,0.058333333333333334,white,-10,keras,
+framework_parity,audio-tcn-clean,0,0.05,white,-10,torch,
+framework_parity,audio-tcn-clean,0,0.8583333333333333,pink,10,keras,
+framework_parity,audio-tcn-clean,0,0.875,pink,10,torch,
+framework_parity,audio-tcn-clean,0,0.5666666666666667,pink,0,keras,
+framework_parity,audio-tcn-clean,0,0.5583333333333333,pink,0,torch,
+framework_parity,audio-tcn-clean,0,0.11666666666666667,pink,-10,keras,
+framework_parity,audio-tcn-clean,0,0.06666666666666667,pink,-10,torch,
+framework_parity,audio-tcn-clean,0,0.23333333333333334,babble,10,keras,
+framework_parity,audio-tcn-clean,0,0.2833333333333333,babble,10,torch,
+framework_parity,audio-tcn-clean,0,0.20833333333333334,babble,0,keras,
+framework_parity,audio-tcn-clean,0,0.25,babble,0,torch,
+framework_parity,audio-tcn-clean,0,0.16666666666666666,babble,-10,keras,
+framework_parity,audio-tcn-clean,0,0.15,babble,-10,torch,
+framework_parity,audio-tcn-clean,0,0.6666666666666666,ambient,10,keras,
+framework_parity,audio-tcn-clean,0,0.8083333333333333,ambient,10,torch,
+framework_parity,audio-tcn-clean,0,0.13333333333333333,ambient,0,keras,
+framework_parity,audio-tcn-clean,0,0.275,ambient,0,torch,
+framework_parity,audio-tcn-clean,0,0.05,ambient,-10,keras,
+framework_parity,audio-tcn-clean,0,0.05,ambient,-10,torch,
+framework_parity,audio-tcn-clean,1,1.0,clean,clean,keras,
+framework_parity,audio-tcn-clean,1,1.0,clean,clean,torch,
+framework_parity,audio-tcn-clean,1,0.8166666666666667,white,10,keras,
+framework_parity,audio-tcn-clean,1,0.44166666666666665,white,10,torch,
+framework_parity,audio-tcn-clean,1,0.4666666666666667,white,0,keras,
+framework_parity,audio-tcn-clean,1,0.15833333333333333,white,0,torch,
+framework_parity,audio-tcn-clean,1,0.05,white,-10,keras,
+framework_parity,audio-tcn-clean,1,0.05,white,-10,torch,
+framework_parity,audio-tcn-clean,1,0.925,pink,10,keras,
+framework_parity,audio-tcn-clean,1,0.6583333333333333,pink,10,torch,
+framework_parity,audio-tcn-clean,1,0.6833333333333333,pink,0,keras,
+framework_parity,audio-tcn-clean,1,0.3416666666666667,pink,0,torch,
+framework_parity,audio-tcn-clean,1,0.11666666666666667,pink,-10,keras,
+framework_parity,audio-tcn-clean,1,0.06666666666666667,pink,-10,torch,
+framework_parity,audio-tcn-clean,1,0.2916666666666667,babble,10,keras,
+framework_parity,audio-tcn-clean,1,0.23333333333333334,babble,10,torch,
+framework_parity,audio-tcn-clean,1,0.18333333333333332,babble,0,keras,
+framework_parity,audio-tcn-clean,1,0.25833333333333336,babble,0,torch,
+framework_parity,audio-tcn-clean,1,0.15833333333333333,babble,-10,keras,
+framework_parity,audio-tcn-clean,1,0.14166666666666666,babble,-10,torch,
+framework_parity,audio-tcn-clean,1,0.7833333333333333,ambient,10,keras,
+framework_parity,audio-tcn-clean,1,0.575,ambient,10,torch,
+framework_parity,audio-tcn-clean,1,0.275,ambient,0,keras,
+framework_parity,audio-tcn-clean,1,0.175,ambient,0,torch,
+framework_parity,audio-tcn-clean,1,0.06666666666666667,ambient,-10,keras,
+framework_parity,audio-tcn-clean,1,0.05,ambient,-10,torch,
+framework_parity,audio-tcn-clean,2,1.0,clean,clean,keras,
+framework_parity,audio-tcn-clean,2,1.0,clean,clean,torch,
+framework_parity,audio-tcn-clean,2,0.49166666666666664,white,10,keras,
+framework_parity,audio-tcn-clean,2,0.6,white,10,torch,
+framework_parity,audio-tcn-clean,2,0.14166666666666666,white,0,keras,
+framework_parity,audio-tcn-clean,2,0.21666666666666667,white,0,torch,
+framework_parity,audio-tcn-clean,2,0.05,white,-10,keras,
+framework_parity,audio-tcn-clean,2,0.058333333333333334,white,-10,torch,
+framework_parity,audio-tcn-clean,2,0.7416666666666667,pink,10,keras,
+framework_parity,audio-tcn-clean,2,0.7583333333333333,pink,10,torch,
+framework_parity,audio-tcn-clean,2,0.375,pink,0,keras,
+framework_parity,audio-tcn-clean,2,0.38333333333333336,pink,0,torch,
+framework_parity,audio-tcn-clean,2,0.05,pink,-10,keras,
+framework_parity,audio-tcn-clean,2,0.08333333333333333,pink,-10,torch,
+framework_parity,audio-tcn-clean,2,0.25,babble,10,keras,
+framework_parity,audio-tcn-clean,2,0.24166666666666667,babble,10,torch,
+framework_parity,audio-tcn-clean,2,0.18333333333333332,babble,0,keras,
+framework_parity,audio-tcn-clean,2,0.19166666666666668,babble,0,torch,
+framework_parity,audio-tcn-clean,2,0.175,babble,-10,keras,
+framework_parity,audio-tcn-clean,2,0.18333333333333332,babble,-10,torch,
+framework_parity,audio-tcn-clean,2,0.6166666666666667,ambient,10,keras,
+framework_parity,audio-tcn-clean,2,0.6666666666666666,ambient,10,torch,
+framework_parity,audio-tcn-clean,2,0.14166666666666666,ambient,0,keras,
+framework_parity,audio-tcn-clean,2,0.225,ambient,0,torch,
+framework_parity,audio-tcn-clean,2,0.05,ambient,-10,keras,
+framework_parity,audio-tcn-clean,2,0.041666666666666664,ambient,-10,torch,
+framework_parity,audio-tcn-clean,3,1.0,clean,clean,keras,
+framework_parity,audio-tcn-clean,3,1.0,clean,clean,torch,
+framework_parity,audio-tcn-clean,3,0.5916666666666667,white,10,keras,
+framework_parity,audio-tcn-clean,3,0.6833333333333333,white,10,torch,
+framework_parity,audio-tcn-clean,3,0.36666666666666664,white,0,keras,
+framework_parity,audio-tcn-clean,3,0.35833333333333334,white,0,torch,
+framework_parity,audio-tcn-clean,3,0.15833333333333333,white,-10,keras,
+framework_parity,audio-tcn-clean,3,0.1,white,-10,torch,
+framework_parity,audio-tcn-clean,3,0.7416666666666667,pink,10,keras,
+framework_parity,audio-tcn-clean,3,0.8833333333333333,pink,10,torch,
+framework_parity,audio-tcn-clean,3,0.44166666666666665,pink,0,keras,
+framework_parity,audio-tcn-clean,3,0.5666666666666667,pink,0,torch,
+framework_parity,audio-tcn-clean,3,0.15,pink,-10,keras,
+framework_parity,audio-tcn-clean,3,0.08333333333333333,pink,-10,torch,
+framework_parity,audio-tcn-clean,3,0.275,babble,10,keras,
+framework_parity,audio-tcn-clean,3,0.275,babble,10,torch,
+framework_parity,audio-tcn-clean,3,0.2,babble,0,keras,
+framework_parity,audio-tcn-clean,3,0.19166666666666668,babble,0,torch,
+framework_parity,audio-tcn-clean,3,0.125,babble,-10,keras,
+framework_parity,audio-tcn-clean,3,0.15,babble,-10,torch,
+framework_parity,audio-tcn-clean,3,0.5666666666666667,ambient,10,keras,
+framework_parity,audio-tcn-clean,3,0.7333333333333333,ambient,10,torch,
+framework_parity,audio-tcn-clean,3,0.19166666666666668,ambient,0,keras,
+framework_parity,audio-tcn-clean,3,0.18333333333333332,ambient,0,torch,
+framework_parity,audio-tcn-clean,3,0.058333333333333334,ambient,-10,keras,
+framework_parity,audio-tcn-clean,3,0.075,ambient,-10,torch,
+framework_parity,audio-tcn-clean,4,1.0,clean,clean,keras,
+framework_parity,audio-tcn-clean,4,1.0,clean,clean,torch,
+framework_parity,audio-tcn-clean,4,0.65,white,10,keras,
+framework_parity,audio-tcn-clean,4,0.7333333333333333,white,10,torch,
+framework_parity,audio-tcn-clean,4,0.3,white,0,keras,
+framework_parity,audio-tcn-clean,4,0.39166666666666666,white,0,torch,
+framework_parity,audio-tcn-clean,4,0.11666666666666667,white,-10,keras,
+framework_parity,audio-tcn-clean,4,0.1,white,-10,torch,
+framework_parity,audio-tcn-clean,4,0.875,pink,10,keras,
+framework_parity,audio-tcn-clean,4,0.9583333333333334,pink,10,torch,
+framework_parity,audio-tcn-clean,4,0.5666666666666667,pink,0,keras,
+framework_parity,audio-tcn-clean,4,0.6,pink,0,torch,
+framework_parity,audio-tcn-clean,4,0.10833333333333334,pink,-10,keras,
+framework_parity,audio-tcn-clean,4,0.13333333333333333,pink,-10,torch,
+framework_parity,audio-tcn-clean,4,0.2833333333333333,babble,10,keras,
+framework_parity,audio-tcn-clean,4,0.26666666666666666,babble,10,torch,
+framework_parity,audio-tcn-clean,4,0.15833333333333333,babble,0,keras,
+framework_parity,audio-tcn-clean,4,0.18333333333333332,babble,0,torch,
+framework_parity,audio-tcn-clean,4,0.175,babble,-10,keras,
+framework_parity,audio-tcn-clean,4,0.18333333333333332,babble,-10,torch,
+framework_parity,audio-tcn-clean,4,0.7083333333333334,ambient,10,keras,
+framework_parity,audio-tcn-clean,4,0.7916666666666666,ambient,10,torch,
+framework_parity,audio-tcn-clean,4,0.2,ambient,0,keras,
+framework_parity,audio-tcn-clean,4,0.21666666666666667,ambient,0,torch,
+framework_parity,audio-tcn-clean,4,0.03333333333333333,ambient,-10,keras,
+framework_parity,audio-tcn-clean,4,0.041666666666666664,ambient,-10,torch,
+framework_parity,audio-cnn2d-clean,0,0.9833333333333333,clean,clean,keras,
+framework_parity,audio-cnn2d-clean,0,0.9916666666666667,clean,clean,torch,
+framework_parity,audio-cnn2d-clean,0,0.075,white,10,keras,
+framework_parity,audio-cnn2d-clean,0,0.05,white,10,torch,
+framework_parity,audio-cnn2d-clean,0,0.05,white,0,keras,
+framework_parity,audio-cnn2d-clean,0,0.05,white,0,torch,
+framework_parity,audio-cnn2d-clean,0,0.05,white,-10,keras,
+framework_parity,audio-cnn2d-clean,0,0.05,white,-10,torch,
+framework_parity,audio-cnn2d-clean,0,0.075,pink,10,keras,
+framework_parity,audio-cnn2d-clean,0,0.05,pink,10,torch,
+framework_parity,audio-cnn2d-clean,0,0.05,pink,0,keras,
+framework_parity,audio-cnn2d-clean,0,0.05,pink,0,torch,
+framework_parity,audio-cnn2d-clean,0,0.05,pink,-10,keras,
+framework_parity,audio-cnn2d-clean,0,0.05,pink,-10,torch,
+framework_parity,audio-cnn2d-clean,0,0.075,babble,10,keras,
+framework_parity,audio-cnn2d-clean,0,0.09166666666666666,babble,10,torch,
+framework_parity,audio-cnn2d-clean,0,0.08333333333333333,babble,0,keras,
+framework_parity,audio-cnn2d-clean,0,0.09166666666666666,babble,0,torch,
+framework_parity,audio-cnn2d-clean,0,0.06666666666666667,babble,-10,keras,
+framework_parity,audio-cnn2d-clean,0,0.11666666666666667,babble,-10,torch,
+framework_parity,audio-cnn2d-clean,0,0.19166666666666668,ambient,10,keras,
+framework_parity,audio-cnn2d-clean,0,0.1,ambient,10,torch,
+framework_parity,audio-cnn2d-clean,0,0.08333333333333333,ambient,0,keras,
+framework_parity,audio-cnn2d-clean,0,0.058333333333333334,ambient,0,torch,
+framework_parity,audio-cnn2d-clean,0,0.05,ambient,-10,keras,
+framework_parity,audio-cnn2d-clean,0,0.03333333333333333,ambient,-10,torch,
+framework_parity,audio-cnn2d-clean,1,1.0,clean,clean,keras,
+framework_parity,audio-cnn2d-clean,1,0.9916666666666667,clean,clean,torch,
+framework_parity,audio-cnn2d-clean,1,0.09166666666666666,white,10,keras,
+framework_parity,audio-cnn2d-clean,1,0.05,white,10,torch,
+framework_parity,audio-cnn2d-clean,1,0.058333333333333334,white,0,keras,
+framework_parity,audio-cnn2d-clean,1,0.05,white,0,torch,
+framework_parity,audio-cnn2d-clean,1,0.05,white,-10,keras,
+framework_parity,audio-cnn2d-clean,1,0.05,white,-10,torch,
+framework_parity,audio-cnn2d-clean,1,0.1,pink,10,keras,
+framework_parity,audio-cnn2d-clean,1,0.05,pink,10,torch,
+framework_parity,audio-cnn2d-clean,1,0.09166666666666666,pink,0,keras,
+framework_parity,audio-cnn2d-clean,1,0.05,pink,0,torch,
+framework_parity,audio-cnn2d-clean,1,0.05,pink,-10,keras,
+framework_parity,audio-cnn2d-clean,1,0.05,pink,-10,torch,
+framework_parity,audio-cnn2d-clean,1,0.06666666666666667,babble,10,keras,
+framework_parity,audio-cnn2d-clean,1,0.06666666666666667,babble,10,torch,
+framework_parity,audio-cnn2d-clean,1,0.075,babble,0,keras,
+framework_parity,audio-cnn2d-clean,1,0.058333333333333334,babble,0,torch,
+framework_parity,audio-cnn2d-clean,1,0.075,babble,-10,keras,
+framework_parity,audio-cnn2d-clean,1,0.058333333333333334,babble,-10,torch,
+framework_parity,audio-cnn2d-clean,1,0.09166666666666666,ambient,10,keras,
+framework_parity,audio-cnn2d-clean,1,0.2,ambient,10,torch,
+framework_parity,audio-cnn2d-clean,1,0.058333333333333334,ambient,0,keras,
+framework_parity,audio-cnn2d-clean,1,0.06666666666666667,ambient,0,torch,
+framework_parity,audio-cnn2d-clean,1,0.05,ambient,-10,keras,
+framework_parity,audio-cnn2d-clean,1,0.075,ambient,-10,torch,
+framework_parity,audio-cnn2d-clean,2,1.0,clean,clean,keras,
+framework_parity,audio-cnn2d-clean,2,1.0,clean,clean,torch,
+framework_parity,audio-cnn2d-clean,2,0.06666666666666667,white,10,keras,
+framework_parity,audio-cnn2d-clean,2,0.058333333333333334,white,10,torch,
+framework_parity,audio-cnn2d-clean,2,0.08333333333333333,white,0,keras,
+framework_parity,audio-cnn2d-clean,2,0.058333333333333334,white,0,torch,
+framework_parity,audio-cnn2d-clean,2,0.06666666666666667,white,-10,keras,
+framework_parity,audio-cnn2d-clean,2,0.03333333333333333,white,-10,torch,
+framework_parity,audio-cnn2d-clean,2,0.1,pink,10,keras,
+framework_parity,audio-cnn2d-clean,2,0.1,pink,10,torch,
+framework_parity,audio-cnn2d-clean,2,0.1,pink,0,keras,
+framework_parity,audio-cnn2d-clean,2,0.058333333333333334,pink,0,torch,
+framework_parity,audio-cnn2d-clean,2,0.05,pink,-10,keras,
+framework_parity,audio-cnn2d-clean,2,0.041666666666666664,pink,-10,torch,
+framework_parity,audio-cnn2d-clean,2,0.075,babble,10,keras,
+framework_parity,audio-cnn2d-clean,2,0.125,babble,10,torch,
+framework_parity,audio-cnn2d-clean,2,0.06666666666666667,babble,0,keras,
+framework_parity,audio-cnn2d-clean,2,0.11666666666666667,babble,0,torch,
+framework_parity,audio-cnn2d-clean,2,0.08333333333333333,babble,-10,keras,
+framework_parity,audio-cnn2d-clean,2,0.10833333333333334,babble,-10,torch,
+framework_parity,audio-cnn2d-clean,2,0.11666666666666667,ambient,10,keras,
+framework_parity,audio-cnn2d-clean,2,0.14166666666666666,ambient,10,torch,
+framework_parity,audio-cnn2d-clean,2,0.09166666666666666,ambient,0,keras,
+framework_parity,audio-cnn2d-clean,2,0.058333333333333334,ambient,0,torch,
+framework_parity,audio-cnn2d-clean,2,0.058333333333333334,ambient,-10,keras,
+framework_parity,audio-cnn2d-clean,2,0.041666666666666664,ambient,-10,torch,
+framework_parity,audio-cnn2d-clean,3,1.0,clean,clean,keras,
+framework_parity,audio-cnn2d-clean,3,0.9916666666666667,clean,clean,torch,
+framework_parity,audio-cnn2d-clean,3,0.05,white,10,keras,
+framework_parity,audio-cnn2d-clean,3,0.05,white,10,torch,
+framework_parity,audio-cnn2d-clean,3,0.05,white,0,keras,
+framework_parity,audio-cnn2d-clean,3,0.05,white,0,torch,
+framework_parity,audio-cnn2d-clean,3,0.05,white,-10,keras,
+framework_parity,audio-cnn2d-clean,3,0.05,white,-10,torch,
+framework_parity,audio-cnn2d-clean,3,0.05,pink,10,keras,
+framework_parity,audio-cnn2d-clean,3,0.05,pink,10,torch,
+framework_parity,audio-cnn2d-clean,3,0.05,pink,0,keras,
+framework_parity,audio-cnn2d-clean,3,0.05,pink,0,torch,
+framework_parity,audio-cnn2d-clean,3,0.05,pink,-10,keras,
+framework_parity,audio-cnn2d-clean,3,0.05,pink,-10,torch,
+framework_parity,audio-cnn2d-clean,3,0.058333333333333334,babble,10,keras,
+framework_parity,audio-cnn2d-clean,3,0.05,babble,10,torch,
+framework_parity,audio-cnn2d-clean,3,0.075,babble,0,keras,
+framework_parity,audio-cnn2d-clean,3,0.058333333333333334,babble,0,torch,
+framework_parity,audio-cnn2d-clean,3,0.075,babble,-10,keras,
+framework_parity,audio-cnn2d-clean,3,0.058333333333333334,babble,-10,torch,
+framework_parity,audio-cnn2d-clean,3,0.16666666666666666,ambient,10,keras,
+framework_parity,audio-cnn2d-clean,3,0.075,ambient,10,torch,
+framework_parity,audio-cnn2d-clean,3,0.06666666666666667,ambient,0,keras,
+framework_parity,audio-cnn2d-clean,3,0.06666666666666667,ambient,0,torch,
+framework_parity,audio-cnn2d-clean,3,0.041666666666666664,ambient,-10,keras,
+framework_parity,audio-cnn2d-clean,3,0.041666666666666664,ambient,-10,torch,
+framework_parity,audio-cnn2d-clean,4,1.0,clean,clean,keras,
+framework_parity,audio-cnn2d-clean,4,1.0,clean,clean,torch,
+framework_parity,audio-cnn2d-clean,4,0.075,white,10,keras,
+framework_parity,audio-cnn2d-clean,4,0.05,white,10,torch,
+framework_parity,audio-cnn2d-clean,4,0.05,white,0,keras,
+framework_parity,audio-cnn2d-clean,4,0.05,white,0,torch,
+framework_parity,audio-cnn2d-clean,4,0.05,white,-10,keras,
+framework_parity,audio-cnn2d-clean,4,0.05,white,-10,torch,
+framework_parity,audio-cnn2d-clean,4,0.09166666666666666,pink,10,keras,
+framework_parity,audio-cnn2d-clean,4,0.05,pink,10,torch,
+framework_parity,audio-cnn2d-clean,4,0.05,pink,0,keras,
+framework_parity,audio-cnn2d-clean,4,0.05,pink,0,torch,
+framework_parity,audio-cnn2d-clean,4,0.05,pink,-10,keras,
+framework_parity,audio-cnn2d-clean,4,0.05,pink,-10,torch,
+framework_parity,audio-cnn2d-clean,4,0.09166666666666666,babble,10,keras,
+framework_parity,audio-cnn2d-clean,4,0.1,babble,10,torch,
+framework_parity,audio-cnn2d-clean,4,0.08333333333333333,babble,0,keras,
+framework_parity,audio-cnn2d-clean,4,0.05,babble,0,torch,
+framework_parity,audio-cnn2d-clean,4,0.075,babble,-10,keras,
+framework_parity,audio-cnn2d-clean,4,0.10833333333333334,babble,-10,torch,
+framework_parity,audio-cnn2d-clean,4,0.16666666666666666,ambient,10,keras,
+framework_parity,audio-cnn2d-clean,4,0.05,ambient,10,torch,
+framework_parity,audio-cnn2d-clean,4,0.058333333333333334,ambient,0,keras,
+framework_parity,audio-cnn2d-clean,4,0.05,ambient,0,torch,
+framework_parity,audio-cnn2d-clean,4,0.041666666666666664,ambient,-10,keras,
+framework_parity,audio-cnn2d-clean,4,0.05,ambient,-10,torch,
+framework_parity,audio-tcn-multi,0,1.0,clean,clean,keras,
+framework_parity,audio-tcn-multi,0,1.0,clean,clean,torch,
+framework_parity,audio-tcn-multi,0,1.0,white,10,keras,
+framework_parity,audio-tcn-multi,0,1.0,white,10,torch,
+framework_parity,audio-tcn-multi,0,1.0,white,0,keras,
+framework_parity,audio-tcn-multi,0,1.0,white,0,torch,
+framework_parity,audio-tcn-multi,0,0.875,white,-10,keras,
+framework_parity,audio-tcn-multi,0,0.7833333333333333,white,-10,torch,
+framework_parity,audio-tcn-multi,0,1.0,pink,10,keras,
+framework_parity,audio-tcn-multi,0,1.0,pink,10,torch,
+framework_parity,audio-tcn-multi,0,1.0,pink,0,keras,
+framework_parity,audio-tcn-multi,0,1.0,pink,0,torch,
+framework_parity,audio-tcn-multi,0,0.8333333333333334,pink,-10,keras,
+framework_parity,audio-tcn-multi,0,0.7916666666666666,pink,-10,torch,
+framework_parity,audio-tcn-multi,0,0.6416666666666667,babble,10,keras,
+framework_parity,audio-tcn-multi,0,0.6083333333333333,babble,10,torch,
+framework_parity,audio-tcn-multi,0,0.18333333333333332,babble,0,keras,
+framework_parity,audio-tcn-multi,0,0.175,babble,0,torch,
+framework_parity,audio-tcn-multi,0,0.06666666666666667,babble,-10,keras,
+framework_parity,audio-tcn-multi,0,0.08333333333333333,babble,-10,torch,
+framework_parity,audio-tcn-multi,0,1.0,ambient,10,keras,
+framework_parity,audio-tcn-multi,0,0.9916666666666667,ambient,10,torch,
+framework_parity,audio-tcn-multi,0,0.975,ambient,0,keras,
+framework_parity,audio-tcn-multi,0,0.9,ambient,0,torch,
+framework_parity,audio-tcn-multi,0,0.1,ambient,-10,keras,
+framework_parity,audio-tcn-multi,0,0.08333333333333333,ambient,-10,torch,
+framework_parity,audio-tcn-multi,1,1.0,clean,clean,keras,
+framework_parity,audio-tcn-multi,1,1.0,clean,clean,torch,
+framework_parity,audio-tcn-multi,1,1.0,white,10,keras,
+framework_parity,audio-tcn-multi,1,1.0,white,10,torch,
+framework_parity,audio-tcn-multi,1,0.9916666666666667,white,0,keras,
+framework_parity,audio-tcn-multi,1,1.0,white,0,torch,
+framework_parity,audio-tcn-multi,1,0.8166666666666667,white,-10,keras,
+framework_parity,audio-tcn-multi,1,0.8833333333333333,white,-10,torch,
+framework_parity,audio-tcn-multi,1,1.0,pink,10,keras,
+framework_parity,audio-tcn-multi,1,1.0,pink,10,torch,
+framework_parity,audio-tcn-multi,1,1.0,pink,0,keras,
+framework_parity,audio-tcn-multi,1,1.0,pink,0,torch,
+framework_parity,audio-tcn-multi,1,0.8666666666666667,pink,-10,keras,
+framework_parity,audio-tcn-multi,1,0.8666666666666667,pink,-10,torch,
+framework_parity,audio-tcn-multi,1,0.65,babble,10,keras,
+framework_parity,audio-tcn-multi,1,0.6333333333333333,babble,10,torch,
+framework_parity,audio-tcn-multi,1,0.2,babble,0,keras,
+framework_parity,audio-tcn-multi,1,0.175,babble,0,torch,
+framework_parity,audio-tcn-multi,1,0.08333333333333333,babble,-10,keras,
+framework_parity,audio-tcn-multi,1,0.08333333333333333,babble,-10,torch,
+framework_parity,audio-tcn-multi,1,1.0,ambient,10,keras,
+framework_parity,audio-tcn-multi,1,0.9916666666666667,ambient,10,torch,
+framework_parity,audio-tcn-multi,1,0.9083333333333333,ambient,0,keras,
+framework_parity,audio-tcn-multi,1,0.9416666666666667,ambient,0,torch,
+framework_parity,audio-tcn-multi,1,0.075,ambient,-10,keras,
+framework_parity,audio-tcn-multi,1,0.125,ambient,-10,torch,
+framework_parity,audio-tcn-multi,2,1.0,clean,clean,keras,
+framework_parity,audio-tcn-multi,2,1.0,clean,clean,torch,
+framework_parity,audio-tcn-multi,2,1.0,white,10,keras,
+framework_parity,audio-tcn-multi,2,1.0,white,10,torch,
+framework_parity,audio-tcn-multi,2,1.0,white,0,keras,
+framework_parity,audio-tcn-multi,2,1.0,white,0,torch,
+framework_parity,audio-tcn-multi,2,0.85,white,-10,keras,
+framework_parity,audio-tcn-multi,2,0.85,white,-10,torch,
+framework_parity,audio-tcn-multi,2,1.0,pink,10,keras,
+framework_parity,audio-tcn-multi,2,1.0,pink,10,torch,
+framework_parity,audio-tcn-multi,2,1.0,pink,0,keras,
+framework_parity,audio-tcn-multi,2,1.0,pink,0,torch,
+framework_parity,audio-tcn-multi,2,0.8666666666666667,pink,-10,keras,
+framework_parity,audio-tcn-multi,2,0.85,pink,-10,torch,
+framework_parity,audio-tcn-multi,2,0.65,babble,10,keras,
+framework_parity,audio-tcn-multi,2,0.7166666666666667,babble,10,torch,
+framework_parity,audio-tcn-multi,2,0.14166666666666666,babble,0,keras,
+framework_parity,audio-tcn-multi,2,0.18333333333333332,babble,0,torch,
+framework_parity,audio-tcn-multi,2,0.1,babble,-10,keras,
+framework_parity,audio-tcn-multi,2,0.09166666666666666,babble,-10,torch,
+framework_parity,audio-tcn-multi,2,0.9916666666666667,ambient,10,keras,
+framework_parity,audio-tcn-multi,2,1.0,ambient,10,torch,
+framework_parity,audio-tcn-multi,2,0.9083333333333333,ambient,0,keras,
+framework_parity,audio-tcn-multi,2,0.9416666666666667,ambient,0,torch,
+framework_parity,audio-tcn-multi,2,0.075,ambient,-10,keras,
+framework_parity,audio-tcn-multi,2,0.06666666666666667,ambient,-10,torch,
+framework_parity,audio-tcn-multi,3,1.0,clean,clean,keras,
+framework_parity,audio-tcn-multi,3,1.0,clean,clean,torch,
+framework_parity,audio-tcn-multi,3,1.0,white,10,keras,
+framework_parity,audio-tcn-multi,3,1.0,white,10,torch,
+framework_parity,audio-tcn-multi,3,1.0,white,0,keras,
+framework_parity,audio-tcn-multi,3,1.0,white,0,torch,
+framework_parity,audio-tcn-multi,3,0.7916666666666666,white,-10,keras,
+framework_parity,audio-tcn-multi,3,0.8333333333333334,white,-10,torch,
+framework_parity,audio-tcn-multi,3,1.0,pink,10,keras,
+framework_parity,audio-tcn-multi,3,1.0,pink,10,torch,
+framework_parity,audio-tcn-multi,3,0.9916666666666667,pink,0,keras,
+framework_parity,audio-tcn-multi,3,1.0,pink,0,torch,
+framework_parity,audio-tcn-multi,3,0.8,pink,-10,keras,
+framework_parity,audio-tcn-multi,3,0.8333333333333334,pink,-10,torch,
+framework_parity,audio-tcn-multi,3,0.5833333333333334,babble,10,keras,
+framework_parity,audio-tcn-multi,3,0.7083333333333334,babble,10,torch,
+framework_parity,audio-tcn-multi,3,0.16666666666666666,babble,0,keras,
+framework_parity,audio-tcn-multi,3,0.15833333333333333,babble,0,torch,
+framework_parity,audio-tcn-multi,3,0.1,babble,-10,keras,
+framework_parity,audio-tcn-multi,3,0.14166666666666666,babble,-10,torch,
+framework_parity,audio-tcn-multi,3,0.9916666666666667,ambient,10,keras,
+framework_parity,audio-tcn-multi,3,1.0,ambient,10,torch,
+framework_parity,audio-tcn-multi,3,0.95,ambient,0,keras,
+framework_parity,audio-tcn-multi,3,0.975,ambient,0,torch,
+framework_parity,audio-tcn-multi,3,0.08333333333333333,ambient,-10,keras,
+framework_parity,audio-tcn-multi,3,0.075,ambient,-10,torch,
+framework_parity,audio-tcn-multi,4,1.0,clean,clean,keras,
+framework_parity,audio-tcn-multi,4,1.0,clean,clean,torch,
+framework_parity,audio-tcn-multi,4,1.0,white,10,keras,
+framework_parity,audio-tcn-multi,4,1.0,white,10,torch,
+framework_parity,audio-tcn-multi,4,1.0,white,0,keras,
+framework_parity,audio-tcn-multi,4,1.0,white,0,torch,
+framework_parity,audio-tcn-multi,4,0.8333333333333334,white,-10,keras,
+framework_parity,audio-tcn-multi,4,0.8833333333333333,white,-10,torch,
+framework_parity,audio-tcn-multi,4,1.0,pink,10,keras,
+framework_parity,audio-tcn-multi,4,1.0,pink,10,torch,
+framework_parity,audio-tcn-multi,4,1.0,pink,0,keras,
+framework_parity,audio-tcn-multi,4,1.0,pink,0,torch,
+framework_parity,audio-tcn-multi,4,0.8333333333333334,pink,-10,keras,
+framework_parity,audio-tcn-multi,4,0.8333333333333334,pink,-10,torch,
+framework_parity,audio-tcn-multi,4,0.6916666666666667,babble,10,keras,
+framework_parity,audio-tcn-multi,4,0.6666666666666666,babble,10,torch,
+framework_parity,audio-tcn-multi,4,0.19166666666666668,babble,0,keras,
+framework_parity,audio-tcn-multi,4,0.125,babble,0,torch,
+framework_parity,audio-tcn-multi,4,0.16666666666666666,babble,-10,keras,
+framework_parity,audio-tcn-multi,4,0.1,babble,-10,torch,
+framework_parity,audio-tcn-multi,4,1.0,ambient,10,keras,
+framework_parity,audio-tcn-multi,4,1.0,ambient,10,torch,
+framework_parity,audio-tcn-multi,4,0.9416666666666667,ambient,0,keras,
+framework_parity,audio-tcn-multi,4,0.9666666666666667,ambient,0,torch,
+framework_parity,audio-tcn-multi,4,0.08333333333333333,ambient,-10,keras,
+framework_parity,audio-tcn-multi,4,0.11666666666666667,ambient,-10,torch,
+framework_parity,visual-landmarks-dct-shape-tcn,0,1.0,,,keras,0.0
+framework_parity,visual-landmarks-dct-shape-tcn,0,1.0,,,torch,0.0
+framework_parity,visual-landmarks-dct-shape-tcn,0,0.8416666666666667,,,keras,2.0
+framework_parity,visual-landmarks-dct-shape-tcn,0,0.9,,,torch,2.0
+framework_parity,visual-landmarks-dct-shape-tcn,1,1.0,,,keras,0.0
+framework_parity,visual-landmarks-dct-shape-tcn,1,1.0,,,torch,0.0
+framework_parity,visual-landmarks-dct-shape-tcn,1,0.8916666666666667,,,keras,2.0
+framework_parity,visual-landmarks-dct-shape-tcn,1,0.8666666666666667,,,torch,2.0
+framework_parity,visual-landmarks-dct-shape-tcn,2,1.0,,,keras,0.0
+framework_parity,visual-landmarks-dct-shape-tcn,2,1.0,,,torch,0.0
+framework_parity,visual-landmarks-dct-shape-tcn,2,0.7916666666666666,,,keras,2.0
+framework_parity,visual-landmarks-dct-shape-tcn,2,0.9,,,torch,2.0
+framework_parity,visual-landmarks-dct-shape-tcn,3,1.0,,,keras,0.0
+framework_parity,visual-landmarks-dct-shape-tcn,3,0.9916666666666667,,,torch,0.0
+framework_parity,visual-landmarks-dct-shape-tcn,3,0.9083333333333333,,,keras,2.0
+framework_parity,visual-landmarks-dct-shape-tcn,3,0.8,,,torch,2.0
+framework_parity,visual-landmarks-dct-shape-tcn,4,1.0,,,keras,0.0
+framework_parity,visual-landmarks-dct-shape-tcn,4,1.0,,,torch,0.0
+framework_parity,visual-landmarks-dct-shape-tcn,4,0.825,,,keras,2.0
+framework_parity,visual-landmarks-dct-shape-tcn,4,0.825,,,torch,2.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,clean,clean,keras,0.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,clean,clean,torch,0.0
+framework_parity,av-early-multi-cleanvideo,0,0.9416666666666667,clean,clean,keras,2.0
+framework_parity,av-early-multi-cleanvideo,0,0.9333333333333333,clean,clean,torch,2.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,white,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,white,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,0,0.975,white,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,0,0.9666666666666667,white,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,white,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,white,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,0,0.925,white,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,0,0.9166666666666666,white,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,white,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,white,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,0,0.8583333333333333,white,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,0,0.85,white,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,pink,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,pink,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,0,0.975,pink,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,0,0.9666666666666667,pink,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,pink,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,pink,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,0,0.9583333333333334,pink,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,0,0.925,pink,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,pink,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,pink,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,0,0.8333333333333334,pink,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,0,0.8,pink,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,babble,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,babble,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,0,0.9,babble,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,0,0.85,babble,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,babble,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,babble,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,0,0.8166666666666667,babble,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,0,0.8,babble,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,babble,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,babble,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,0,0.8333333333333334,babble,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,0,0.7833333333333333,babble,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,ambient,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,ambient,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,0,0.925,ambient,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,0,0.95,ambient,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,ambient,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,ambient,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,0,0.875,ambient,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,0,0.8083333333333333,ambient,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,ambient,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,0,1.0,ambient,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,0,0.7333333333333333,ambient,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,0,0.75,ambient,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,clean,clean,keras,0.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,clean,clean,torch,0.0
+framework_parity,av-early-multi-cleanvideo,1,0.9333333333333333,clean,clean,keras,2.0
+framework_parity,av-early-multi-cleanvideo,1,0.9833333333333333,clean,clean,torch,2.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,white,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,white,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,1,0.9166666666666666,white,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,1,0.95,white,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,white,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,white,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,1,0.85,white,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,1,0.9333333333333333,white,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,white,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,white,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,1,0.7833333333333333,white,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,1,0.7916666666666666,white,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,pink,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,pink,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,1,0.9083333333333333,pink,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,1,0.975,pink,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,pink,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,pink,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,1,0.85,pink,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,1,0.9333333333333333,pink,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,pink,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,pink,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,1,0.7833333333333333,pink,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,1,0.85,pink,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,babble,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,babble,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,1,0.8416666666666667,babble,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,1,0.9,babble,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,babble,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,babble,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,1,0.7833333333333333,babble,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,1,0.875,babble,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,babble,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,babble,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,1,0.75,babble,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,1,0.85,babble,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,ambient,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,ambient,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,1,0.875,ambient,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,1,0.9333333333333333,ambient,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,ambient,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,ambient,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,1,0.8083333333333333,ambient,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,1,0.8583333333333333,ambient,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,ambient,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,1,1.0,ambient,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,1,0.7333333333333333,ambient,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,1,0.7833333333333333,ambient,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,clean,clean,keras,0.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,clean,clean,torch,0.0
+framework_parity,av-early-multi-cleanvideo,2,0.9416666666666667,clean,clean,keras,2.0
+framework_parity,av-early-multi-cleanvideo,2,0.925,clean,clean,torch,2.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,white,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,white,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,2,0.9333333333333333,white,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,2,0.9166666666666666,white,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,white,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,white,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,2,0.925,white,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,2,0.8416666666666667,white,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,white,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,white,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,2,0.85,white,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,2,0.7,white,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,pink,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,pink,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,2,0.9416666666666667,pink,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,2,0.925,pink,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,pink,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,pink,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,2,0.925,pink,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,2,0.8583333333333333,pink,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,pink,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,pink,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,2,0.875,pink,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,2,0.7083333333333334,pink,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,babble,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,babble,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,2,0.8833333333333333,babble,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,2,0.7833333333333333,babble,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,babble,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,babble,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,2,0.8416666666666667,babble,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,2,0.7916666666666666,babble,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,babble,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,babble,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,2,0.875,babble,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,2,0.725,babble,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,ambient,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,ambient,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,2,0.925,ambient,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,2,0.8583333333333333,ambient,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,ambient,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,ambient,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,2,0.875,ambient,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,2,0.75,ambient,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,ambient,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,2,1.0,ambient,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,2,0.825,ambient,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,2,0.6333333333333333,ambient,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,clean,clean,keras,0.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,clean,clean,torch,0.0
+framework_parity,av-early-multi-cleanvideo,3,0.9416666666666667,clean,clean,keras,2.0
+framework_parity,av-early-multi-cleanvideo,3,0.9583333333333334,clean,clean,torch,2.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,white,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,white,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,3,0.9083333333333333,white,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,3,0.9083333333333333,white,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,white,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,white,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,3,0.9,white,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,3,0.8916666666666667,white,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,white,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,white,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,3,0.8,white,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,3,0.8333333333333334,white,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,pink,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,pink,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,3,0.9333333333333333,pink,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,3,0.9416666666666667,pink,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,pink,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,pink,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,3,0.8583333333333333,pink,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,3,0.9083333333333333,pink,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,pink,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,pink,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,3,0.7416666666666667,pink,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,3,0.8166666666666667,pink,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,babble,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,babble,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,3,0.825,babble,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,3,0.875,babble,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,babble,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,babble,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,3,0.7666666666666667,babble,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,3,0.8416666666666667,babble,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,babble,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,babble,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,3,0.7416666666666667,babble,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,3,0.825,babble,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,ambient,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,ambient,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,3,0.9,ambient,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,3,0.9166666666666666,ambient,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,ambient,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,ambient,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,3,0.7833333333333333,ambient,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,3,0.875,ambient,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,ambient,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,3,1.0,ambient,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,3,0.7083333333333334,ambient,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,3,0.8,ambient,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,clean,clean,keras,0.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,clean,clean,torch,0.0
+framework_parity,av-early-multi-cleanvideo,4,0.925,clean,clean,keras,2.0
+framework_parity,av-early-multi-cleanvideo,4,0.8916666666666667,clean,clean,torch,2.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,white,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,white,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,4,0.8666666666666667,white,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,4,0.8916666666666667,white,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,white,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,white,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,4,0.775,white,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,4,0.8333333333333334,white,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,white,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,white,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,4,0.6833333333333333,white,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,4,0.7333333333333333,white,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,pink,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,pink,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,4,0.8833333333333333,pink,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,4,0.8916666666666667,pink,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,pink,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,pink,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,4,0.825,pink,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,4,0.8083333333333333,pink,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,pink,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,pink,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,4,0.6666666666666666,pink,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,4,0.7166666666666667,pink,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,babble,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,babble,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,4,0.7333333333333333,babble,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,4,0.75,babble,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,babble,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,4,0.9916666666666667,babble,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,4,0.6916666666666667,babble,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,4,0.7,babble,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,babble,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,babble,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,4,0.6416666666666667,babble,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,4,0.7,babble,-10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,ambient,10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,ambient,10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,4,0.825,ambient,10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,4,0.7916666666666666,ambient,10,torch,2.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,ambient,0,keras,0.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,ambient,0,torch,0.0
+framework_parity,av-early-multi-cleanvideo,4,0.7583333333333333,ambient,0,keras,2.0
+framework_parity,av-early-multi-cleanvideo,4,0.7416666666666667,ambient,0,torch,2.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,ambient,-10,keras,0.0
+framework_parity,av-early-multi-cleanvideo,4,1.0,ambient,-10,torch,0.0
+framework_parity,av-early-multi-cleanvideo,4,0.6333333333333333,ambient,-10,keras,2.0
+framework_parity,av-early-multi-cleanvideo,4,0.675,ambient,-10,torch,2.0
+framework_parity,late-adaptive,0,1.0,clean,clean,keras audio + torch video,0.0
+framework_parity,late-adaptive,0,1.0,clean,clean,keras audio + torch video,2.0
+framework_parity,late-adaptive,0,1.0,white,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,0,1.0,white,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,0,1.0,white,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,0,1.0,white,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,0,1.0,white,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,0,0.9166666666666666,white,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,0,1.0,pink,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,0,1.0,pink,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,0,1.0,pink,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,0,1.0,pink,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,0,1.0,pink,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,0,0.9416666666666667,pink,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,0,1.0,babble,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,0,0.7166666666666667,babble,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,0,1.0,babble,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,0,0.325,babble,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,0,1.0,babble,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,0,0.2833333333333333,babble,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,0,1.0,ambient,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,0,1.0,ambient,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,0,1.0,ambient,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,0,0.9916666666666667,ambient,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,0,1.0,ambient,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,0,0.875,ambient,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,0,1.0,clean,clean,torch,0.0
+framework_parity,late-adaptive,0,1.0,clean,clean,torch,2.0
+framework_parity,late-adaptive,0,1.0,white,10,torch,0.0
+framework_parity,late-adaptive,0,1.0,white,10,torch,2.0
+framework_parity,late-adaptive,0,1.0,white,0,torch,0.0
+framework_parity,late-adaptive,0,1.0,white,0,torch,2.0
+framework_parity,late-adaptive,0,1.0,white,-10,torch,0.0
+framework_parity,late-adaptive,0,0.9333333333333333,white,-10,torch,2.0
+framework_parity,late-adaptive,0,1.0,pink,10,torch,0.0
+framework_parity,late-adaptive,0,1.0,pink,10,torch,2.0
+framework_parity,late-adaptive,0,1.0,pink,0,torch,0.0
+framework_parity,late-adaptive,0,1.0,pink,0,torch,2.0
+framework_parity,late-adaptive,0,1.0,pink,-10,torch,0.0
+framework_parity,late-adaptive,0,0.9083333333333333,pink,-10,torch,2.0
+framework_parity,late-adaptive,0,1.0,babble,10,torch,0.0
+framework_parity,late-adaptive,0,0.7083333333333334,babble,10,torch,2.0
+framework_parity,late-adaptive,0,1.0,babble,0,torch,0.0
+framework_parity,late-adaptive,0,0.3416666666666667,babble,0,torch,2.0
+framework_parity,late-adaptive,0,1.0,babble,-10,torch,0.0
+framework_parity,late-adaptive,0,0.3,babble,-10,torch,2.0
+framework_parity,late-adaptive,0,1.0,ambient,10,torch,0.0
+framework_parity,late-adaptive,0,0.9916666666666667,ambient,10,torch,2.0
+framework_parity,late-adaptive,0,1.0,ambient,0,torch,0.0
+framework_parity,late-adaptive,0,0.975,ambient,0,torch,2.0
+framework_parity,late-adaptive,0,1.0,ambient,-10,torch,0.0
+framework_parity,late-adaptive,0,0.7583333333333333,ambient,-10,torch,2.0
+framework_parity,late-adaptive,1,1.0,clean,clean,keras audio + torch video,0.0
+framework_parity,late-adaptive,1,1.0,clean,clean,keras audio + torch video,2.0
+framework_parity,late-adaptive,1,1.0,white,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,1,1.0,white,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,1,1.0,white,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,1,1.0,white,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,1,1.0,white,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,1,0.925,white,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,1,1.0,pink,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,1,1.0,pink,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,1,1.0,pink,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,1,1.0,pink,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,1,1.0,pink,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,1,0.9583333333333334,pink,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,1,1.0,babble,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,1,0.775,babble,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,1,1.0,babble,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,1,0.43333333333333335,babble,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,1,1.0,babble,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,1,0.26666666666666666,babble,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,1,1.0,ambient,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,1,1.0,ambient,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,1,1.0,ambient,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,1,0.9833333333333333,ambient,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,1,1.0,ambient,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,1,0.5583333333333333,ambient,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,1,1.0,clean,clean,torch,0.0
+framework_parity,late-adaptive,1,1.0,clean,clean,torch,2.0
+framework_parity,late-adaptive,1,1.0,white,10,torch,0.0
+framework_parity,late-adaptive,1,1.0,white,10,torch,2.0
+framework_parity,late-adaptive,1,1.0,white,0,torch,0.0
+framework_parity,late-adaptive,1,1.0,white,0,torch,2.0
+framework_parity,late-adaptive,1,1.0,white,-10,torch,0.0
+framework_parity,late-adaptive,1,0.9333333333333333,white,-10,torch,2.0
+framework_parity,late-adaptive,1,1.0,pink,10,torch,0.0
+framework_parity,late-adaptive,1,1.0,pink,10,torch,2.0
+framework_parity,late-adaptive,1,1.0,pink,0,torch,0.0
+framework_parity,late-adaptive,1,1.0,pink,0,torch,2.0
+framework_parity,late-adaptive,1,1.0,pink,-10,torch,0.0
+framework_parity,late-adaptive,1,0.9416666666666667,pink,-10,torch,2.0
+framework_parity,late-adaptive,1,1.0,babble,10,torch,0.0
+framework_parity,late-adaptive,1,0.725,babble,10,torch,2.0
+framework_parity,late-adaptive,1,1.0,babble,0,torch,0.0
+framework_parity,late-adaptive,1,0.4166666666666667,babble,0,torch,2.0
+framework_parity,late-adaptive,1,1.0,babble,-10,torch,0.0
+framework_parity,late-adaptive,1,0.425,babble,-10,torch,2.0
+framework_parity,late-adaptive,1,1.0,ambient,10,torch,0.0
+framework_parity,late-adaptive,1,0.9916666666666667,ambient,10,torch,2.0
+framework_parity,late-adaptive,1,1.0,ambient,0,torch,0.0
+framework_parity,late-adaptive,1,0.9833333333333333,ambient,0,torch,2.0
+framework_parity,late-adaptive,1,1.0,ambient,-10,torch,0.0
+framework_parity,late-adaptive,1,0.8416666666666667,ambient,-10,torch,2.0
+framework_parity,late-adaptive,2,1.0,clean,clean,keras audio + torch video,0.0
+framework_parity,late-adaptive,2,1.0,clean,clean,keras audio + torch video,2.0
+framework_parity,late-adaptive,2,1.0,white,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,2,1.0,white,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,2,1.0,white,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,2,1.0,white,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,2,1.0,white,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,2,0.9666666666666667,white,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,2,1.0,pink,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,2,1.0,pink,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,2,1.0,pink,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,2,1.0,pink,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,2,1.0,pink,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,2,0.975,pink,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,2,1.0,babble,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,2,0.75,babble,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,2,1.0,babble,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,2,0.4083333333333333,babble,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,2,1.0,babble,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,2,0.3333333333333333,babble,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,2,1.0,ambient,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,2,0.9916666666666667,ambient,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,2,1.0,ambient,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,2,0.9916666666666667,ambient,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,2,1.0,ambient,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,2,0.8583333333333333,ambient,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,2,1.0,clean,clean,torch,0.0
+framework_parity,late-adaptive,2,1.0,clean,clean,torch,2.0
+framework_parity,late-adaptive,2,1.0,white,10,torch,0.0
+framework_parity,late-adaptive,2,1.0,white,10,torch,2.0
+framework_parity,late-adaptive,2,1.0,white,0,torch,0.0
+framework_parity,late-adaptive,2,1.0,white,0,torch,2.0
+framework_parity,late-adaptive,2,1.0,white,-10,torch,0.0
+framework_parity,late-adaptive,2,0.9583333333333334,white,-10,torch,2.0
+framework_parity,late-adaptive,2,1.0,pink,10,torch,0.0
+framework_parity,late-adaptive,2,1.0,pink,10,torch,2.0
+framework_parity,late-adaptive,2,1.0,pink,0,torch,0.0
+framework_parity,late-adaptive,2,1.0,pink,0,torch,2.0
+framework_parity,late-adaptive,2,1.0,pink,-10,torch,0.0
+framework_parity,late-adaptive,2,0.9583333333333334,pink,-10,torch,2.0
+framework_parity,late-adaptive,2,1.0,babble,10,torch,0.0
+framework_parity,late-adaptive,2,0.7916666666666666,babble,10,torch,2.0
+framework_parity,late-adaptive,2,1.0,babble,0,torch,0.0
+framework_parity,late-adaptive,2,0.39166666666666666,babble,0,torch,2.0
+framework_parity,late-adaptive,2,1.0,babble,-10,torch,0.0
+framework_parity,late-adaptive,2,0.275,babble,-10,torch,2.0
+framework_parity,late-adaptive,2,1.0,ambient,10,torch,0.0
+framework_parity,late-adaptive,2,1.0,ambient,10,torch,2.0
+framework_parity,late-adaptive,2,1.0,ambient,0,torch,0.0
+framework_parity,late-adaptive,2,0.975,ambient,0,torch,2.0
+framework_parity,late-adaptive,2,1.0,ambient,-10,torch,0.0
+framework_parity,late-adaptive,2,0.8083333333333333,ambient,-10,torch,2.0
+framework_parity,late-adaptive,3,1.0,clean,clean,keras audio + torch video,0.0
+framework_parity,late-adaptive,3,1.0,clean,clean,keras audio + torch video,2.0
+framework_parity,late-adaptive,3,1.0,white,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,3,1.0,white,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,3,1.0,white,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,3,1.0,white,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,3,0.9916666666666667,white,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,3,0.9416666666666667,white,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,3,1.0,pink,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,3,1.0,pink,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,3,1.0,pink,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,3,1.0,pink,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,3,0.9916666666666667,pink,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,3,0.95,pink,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,3,0.9916666666666667,babble,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,3,0.7166666666666667,babble,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,3,0.9916666666666667,babble,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,3,0.4083333333333333,babble,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,3,0.9916666666666667,babble,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,3,0.30833333333333335,babble,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,3,1.0,ambient,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,3,0.9916666666666667,ambient,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,3,1.0,ambient,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,3,0.9916666666666667,ambient,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,3,0.9916666666666667,ambient,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,3,0.6666666666666666,ambient,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,3,1.0,clean,clean,torch,0.0
+framework_parity,late-adaptive,3,1.0,clean,clean,torch,2.0
+framework_parity,late-adaptive,3,1.0,white,10,torch,0.0
+framework_parity,late-adaptive,3,1.0,white,10,torch,2.0
+framework_parity,late-adaptive,3,1.0,white,0,torch,0.0
+framework_parity,late-adaptive,3,1.0,white,0,torch,2.0
+framework_parity,late-adaptive,3,0.9916666666666667,white,-10,torch,0.0
+framework_parity,late-adaptive,3,0.925,white,-10,torch,2.0
+framework_parity,late-adaptive,3,1.0,pink,10,torch,0.0
+framework_parity,late-adaptive,3,1.0,pink,10,torch,2.0
+framework_parity,late-adaptive,3,1.0,pink,0,torch,0.0
+framework_parity,late-adaptive,3,1.0,pink,0,torch,2.0
+framework_parity,late-adaptive,3,0.9916666666666667,pink,-10,torch,0.0
+framework_parity,late-adaptive,3,0.9333333333333333,pink,-10,torch,2.0
+framework_parity,late-adaptive,3,0.9916666666666667,babble,10,torch,0.0
+framework_parity,late-adaptive,3,0.75,babble,10,torch,2.0
+framework_parity,late-adaptive,3,0.9916666666666667,babble,0,torch,0.0
+framework_parity,late-adaptive,3,0.325,babble,0,torch,2.0
+framework_parity,late-adaptive,3,0.9916666666666667,babble,-10,torch,0.0
+framework_parity,late-adaptive,3,0.3,babble,-10,torch,2.0
+framework_parity,late-adaptive,3,1.0,ambient,10,torch,0.0
+framework_parity,late-adaptive,3,1.0,ambient,10,torch,2.0
+framework_parity,late-adaptive,3,1.0,ambient,0,torch,0.0
+framework_parity,late-adaptive,3,0.9833333333333333,ambient,0,torch,2.0
+framework_parity,late-adaptive,3,0.9916666666666667,ambient,-10,torch,0.0
+framework_parity,late-adaptive,3,0.6666666666666666,ambient,-10,torch,2.0
+framework_parity,late-adaptive,4,1.0,clean,clean,keras audio + torch video,0.0
+framework_parity,late-adaptive,4,1.0,clean,clean,keras audio + torch video,2.0
+framework_parity,late-adaptive,4,1.0,white,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,4,1.0,white,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,4,1.0,white,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,4,1.0,white,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,4,1.0,white,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,4,0.9416666666666667,white,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,4,1.0,pink,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,4,1.0,pink,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,4,1.0,pink,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,4,1.0,pink,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,4,1.0,pink,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,4,0.9416666666666667,pink,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,4,1.0,babble,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,4,0.775,babble,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,4,1.0,babble,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,4,0.35,babble,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,4,1.0,babble,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,4,0.35,babble,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,4,1.0,ambient,10,keras audio + torch video,0.0
+framework_parity,late-adaptive,4,1.0,ambient,10,keras audio + torch video,2.0
+framework_parity,late-adaptive,4,1.0,ambient,0,keras audio + torch video,0.0
+framework_parity,late-adaptive,4,0.9916666666666667,ambient,0,keras audio + torch video,2.0
+framework_parity,late-adaptive,4,1.0,ambient,-10,keras audio + torch video,0.0
+framework_parity,late-adaptive,4,0.725,ambient,-10,keras audio + torch video,2.0
+framework_parity,late-adaptive,4,1.0,clean,clean,torch,0.0
+framework_parity,late-adaptive,4,1.0,clean,clean,torch,2.0
+framework_parity,late-adaptive,4,1.0,white,10,torch,0.0
+framework_parity,late-adaptive,4,1.0,white,10,torch,2.0
+framework_parity,late-adaptive,4,1.0,white,0,torch,0.0
+framework_parity,late-adaptive,4,1.0,white,0,torch,2.0
+framework_parity,late-adaptive,4,1.0,white,-10,torch,0.0
+framework_parity,late-adaptive,4,0.925,white,-10,torch,2.0
+framework_parity,late-adaptive,4,1.0,pink,10,torch,0.0
+framework_parity,late-adaptive,4,1.0,pink,10,torch,2.0
+framework_parity,late-adaptive,4,1.0,pink,0,torch,0.0
+framework_parity,late-adaptive,4,1.0,pink,0,torch,2.0
+framework_parity,late-adaptive,4,1.0,pink,-10,torch,0.0
+framework_parity,late-adaptive,4,0.9083333333333333,pink,-10,torch,2.0
+framework_parity,late-adaptive,4,1.0,babble,10,torch,0.0
+framework_parity,late-adaptive,4,0.7583333333333333,babble,10,torch,2.0
+framework_parity,late-adaptive,4,1.0,babble,0,torch,0.0
+framework_parity,late-adaptive,4,0.35833333333333334,babble,0,torch,2.0
+framework_parity,late-adaptive,4,1.0,babble,-10,torch,0.0
+framework_parity,late-adaptive,4,0.30833333333333335,babble,-10,torch,2.0
+framework_parity,late-adaptive,4,1.0,ambient,10,torch,0.0
+framework_parity,late-adaptive,4,1.0,ambient,10,torch,2.0
+framework_parity,late-adaptive,4,1.0,ambient,0,torch,0.0
+framework_parity,late-adaptive,4,0.9833333333333333,ambient,0,torch,2.0
+framework_parity,late-adaptive,4,1.0,ambient,-10,torch,0.0
+framework_parity,late-adaptive,4,0.7833333333333333,ambient,-10,torch,2.0

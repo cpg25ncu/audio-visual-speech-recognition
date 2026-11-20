@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "avsr"
 version = "1.0.0"
-description = "Noise-robust audio-visual isolated-word recognition: hand-built MFCC and lip-DCT front-ends, temporal CNNs, early and late fusion."
+description = "Noise-robust audio-visual isolated-word recognition: hand-built MFCC and lip-DCT front-ends, temporal CNNs in PyTorch and Keras, early and late fusion."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -25,6 +25,8 @@ dependencies = [
 
 [project.optional-dependencies]
 landmarks = ["mediapipe>=0.10"]
+keras = ["tensorflow>=2.16", "keras>=3.0"]
+export = ["onnx>=1.15", "onnxruntime>=1.17"]
 dev = ["pytest>=7", "ruff>=0.4", "librosa>=0.10"]
 
 [project.scripts]

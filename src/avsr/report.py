@@ -496,6 +496,10 @@ def build_report(cfg: Config) -> None:
             fig_alpha(cfg, alpha)
         _confusion_figure(cfg)
     _training_figure(cfg, vis_tag)
+    parity, meta, deploy = load("framework_parity"), load("framework_parity_meta"), load("deployment")
+    if parity is not None or deploy is not None:
+        from .report_frameworks import markdown as framework_markdown
+        md += framework_markdown(cfg, parity, meta, deploy)
     (t / "RESULTS.md").write_text("\n".join(md), encoding="utf-8")
     try:
         from .illustrate import build_illustrations

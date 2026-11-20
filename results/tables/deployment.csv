@@ -1,0 +1,8 @@
+framework,format,size_kb,accuracy_clean,accuracy_0db,max_abs_logit_diff,latency_ms
+PyTorch,eager (CPU),1240.1,1.0,0.76875,,2.289
+PyTorch,ONNX Runtime,1222.0,1.0,0.76875,2.1457672119140625e-06,0.54
+Keras,"Keras, tf.function (CPU)",3795.1,1.0,0.7895833333333333,,1.628
+Keras,TFLite float32,1232.9,1.0,0.7895833333333333,4.0531158447265625e-06,1.403
+Keras,TFLite float16,628.1,1.0,0.7895833333333333,0.002375371754169464,1.388
+Keras,TFLite int8 (dynamic range),331.1,1.0,0.7895833333333333,0.06160065531730652,0.389
+Keras,TFLite int8 (full integer),341.2,1.0,0.7895833333333333,1.0785174369812012,0.396
